@@ -36,7 +36,7 @@ void push(Queue *q, int data)
 {
 	Node *q_node = init_node(data);
 	/* basically means if the queue is not empty */
-	if(q->queue_head != NULL)
+	if(q->queue_head != NULL) // T: validate Queue q is not null
 	{
 		q->last_in_line->previous = q_node;
 	}
@@ -82,7 +82,7 @@ int pull(Queue *q)
 	assert(q != NULL);
 	if(q->queue_head == NULL)
 	{
-		fprintf(stderr, "The queue is empty");
+		fprintf(stderr, "The queue is empty"); // T: 1-nice of you to use stderr, 2- better not do i/o calls in a lib. return error instead
 		return 0;
 	}
 	int data = q->queue_head->data;
