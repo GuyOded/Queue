@@ -36,7 +36,7 @@ void push(Queue *q, int data)
 {
 	Node *q_node = init_node(data);
 	/* basically means if the queue is not empty */
-	if(q->queue_head != NULL)
+	if(q->queue_head != NULL) // T: check Queue q is not null
 	{
 		q->last_in_line->previous = q_node;
 	}
@@ -104,7 +104,7 @@ int pull(Queue *q)
 int head(Queue *q)
 {
 	assert(q != NULL);
-	return q->queue_head->data;
+	return q->queue_head->data; // T: check q->queue_head is not null
 }
 
 /*
